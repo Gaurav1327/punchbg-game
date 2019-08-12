@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>THE PUNCHBAG</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="PUNCHBAG">
+					<h1>THE PUNCHING BAG</h1>
+
+					<div>
+						<p>YOUR CURRENT POWER IS {{powerleft}} NEWTONS.</p>
+					</div>
+
+					<div v-bind:class="{normal: !end}">
+					</div>
+                    <div v-bind:class="{punched: end}">
+					</div>
+                    
+
+					<div class="block">
+						<div v-bind:style="{width: powerleft + '%'}"></div>
+					</div>
+
+					<button v-on:click="punch" v-show="!end">Punch</button>
+					<button v-on:click="restart">Restart</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="app.js"></script>
+</body>
+
+</html>
